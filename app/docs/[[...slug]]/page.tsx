@@ -12,6 +12,13 @@ export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
 }) {
   const params = await props.params;
+
+  if (!params.slug || params.slug.length === 0) {
+    return (
+      <meta httpEquiv="refresh" content="0;url=docs/chonkie" />
+    );
+  }
+
   const page = source.getPage(params.slug);
   if (!page) notFound();
 
