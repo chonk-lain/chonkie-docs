@@ -1,5 +1,7 @@
 {
   "title": "Chonkie",
+  "root": true,
+  "icon": "Book",
   "pages": [
     "index",
     "concepts",
