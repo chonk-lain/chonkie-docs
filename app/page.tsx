@@ -4,7 +4,7 @@ export default function HomePage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center text-center px-4">
       <img
-        src="/assets/logo/chonkie_logo_br_transparent_bg.png"
+        src="https://raw.githubusercontent.com/chonkie-inc/chonkie/main/docs/assets/logo/chonkie_logo_br_transparent_bg.png"
         alt="Chonkie"
         width={400}
         className="mb-8"
