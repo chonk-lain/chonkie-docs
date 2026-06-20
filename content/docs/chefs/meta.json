@@ -1,0 +1,11 @@
+{
+  "title": "Chefs",
+  "pages": [
+    "overview",
+    "tablechef",
+    "textchef",
+    "markdownchef",
+    "mistral-ocr",
+    "liteparse"
+  ]
+}

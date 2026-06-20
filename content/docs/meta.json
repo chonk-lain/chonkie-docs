@@ -1,0 +1,32 @@
+{
+  "title": "Chonkie",
+  "pages": [
+    "index",
+    "concepts",
+    "open-source",
+    "---Getting Started---",
+    "getting-started",
+    "---API Server---",
+    "api-server",
+    "---Chefs---",
+    "chefs",
+    "---Fetchers---",
+    "fetchers",
+    "---Chunkers---",
+    "chunkers",
+    "---Embeddings---",
+    "embeddings",
+    "---Refinery---",
+    "refinery",
+    "---Handshakes---",
+    "handshakes",
+    "---Porters---",
+    "porters",
+    "---Utils---",
+    "utils",
+    "---Experimental---",
+    "experimental",
+    "---Changelog---",
+    "changelog"
+  ]
+}
