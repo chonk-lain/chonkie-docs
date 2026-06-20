@@ -5,7 +5,7 @@ import {
   DocsTitle,
   DocsDescription,
 } from "fumadocs-ui/page";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { getMDXComponents } from "@/components/mdx";
 
 export default async function Page(props: {
@@ -14,9 +14,7 @@ export default async function Page(props: {
   const params = await props.params;
 
   if (!params.slug || params.slug.length === 0) {
-    return (
-      <meta httpEquiv="refresh" content="0;url=docs/chonkie" />
-    );
+    redirect("/docs/chonkie");
   }
 
   const page = source.getPage(params.slug);
@@ -36,13 +34,16 @@ export default async function Page(props: {
 }
 
 export function generateStaticParams() {
-  return source.generateParams();
+  return [{ slug: [] }, ...source.generateParams()];
 }
 
 export async function generateMetadata(props: {
   params: Promise<{ slug?: string[] }>;
 }) {
   const params = await props.params;
+  if (!params.slug || params.slug.length === 0) {
+    return { title: "Documentation", description: "Chonkie Documentation" };
+  }
   const page = source.getPage(params.slug);
   if (!page) notFound();
   return { title: page.data.title, description: page.data.description };

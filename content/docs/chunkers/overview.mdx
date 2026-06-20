@@ -3,50 +3,50 @@ title: "Chunkers Overview"
 description: "Overview of the different chunkers available in Chonkie"
 ---
 
-Chonkie provides multiple chunking strategies to handle different text processing needs. Each chunker in Chonkie is designed to follow the same core principles outlined in the [concepts](/docs/concepts) page.
+Chonkie provides multiple chunking strategies to handle different text processing needs. Each chunker in Chonkie is designed to follow the same core principles outlined in the [concepts](/docs/chonkie/concepts) page.
 
 <Cards>
-  <Card title="CodeChunker" href="/docs/chunkers/code-chunker">
+  <Card title="CodeChunker" href="/docs/chonkie/chunkers/code-chunker">
     Splits code based on its structure using ASTs. Ideal for chunking source
     code files.
   </Card>
-  <Card title="FastChunker" href="/docs/chunkers/fast-chunker">
+  <Card title="FastChunker" href="/docs/chonkie/chunkers/fast-chunker">
     SIMD-accelerated byte-based chunking at 100+ GB/s. Best for high-throughput
     pipelines where byte size limits are acceptable.
   </Card>
-  <Card title="LateChunker" href="/docs/chunkers/late-chunker">
+  <Card title="LateChunker" href="/docs/chonkie/chunkers/late-chunker">
     Chunks using Late Chunking algorithm, best for higher recall in your RAG
     applications.
   </Card>
-  <Card title="NeuralChunker" href="/docs/chunkers/neural-chunker">
+  <Card title="NeuralChunker" href="/docs/chonkie/chunkers/neural-chunker">
     Uses a fine-tuned BERT model to split text based on semantic shifts. Great
     for topic-coherent chunks.
   </Card>
-  <Card title="RecursiveChunker" href="/docs/chunkers/recursive-chunker">
+  <Card title="RecursiveChunker" href="/docs/chonkie/chunkers/recursive-chunker">
     Recursively chunks documents into smaller chunks. Best for long documents
     with well-defined structure.
   </Card>
-  <Card title="SemanticChunker" href="/docs/chunkers/semantic-chunker">
+  <Card title="SemanticChunker" href="/docs/chonkie/chunkers/semantic-chunker">
     Groups content based on semantic similarity. Best for preserving context and
     topical coherence.
   </Card>
-  <Card title="SentenceChunker" href="/docs/chunkers/sentence-chunker">
+  <Card title="SentenceChunker" href="/docs/chonkie/chunkers/sentence-chunker">
     Splits text at sentence boundaries. Perfect for maintaining semantic
     completeness at the sentence level.
   </Card>
-  <Card title="SlumberChunker" href="/docs/chunkers/slumber-chunker">
+  <Card title="SlumberChunker" href="/docs/chonkie/chunkers/slumber-chunker">
     Agentic chunking using generative models (LLMs) via the Genie interface for
     S-tier chunk quality. 🦛🧞
   </Card>
-  <Card title="TableChunker" href="/docs/chunkers/table-chunker">
+  <Card title="TableChunker" href="/docs/chonkie/chunkers/table-chunker">
     Splits large markdown tables into smaller, manageable chunks by row,
     preserving headers. Great for tabular data in RAG and LLM pipelines.
   </Card>
-  <Card title="TeraflopAIChunker" href="/docs/chunkers/teraflopai-chunker">
+  <Card title="TeraflopAIChunker" href="/docs/chonkie/chunkers/teraflopai-chunker">
     Segments text using the TeraflopAI Segmentation API. Ideal for
     domain-specific segmentation such as legal documents.
   </Card>
-  <Card title="TokenChunker" href="/docs/chunkers/token-chunker">
+  <Card title="TokenChunker" href="/docs/chonkie/chunkers/token-chunker">
     Splits text into fixed-size token chunks. Best for maintaining consistent
     chunk sizes and working with token-based models.
   </Card>
