@@ -15,7 +15,7 @@ export default function HomePage() {
       </p>
       <Link
         href="/docs"
-        className="inline-flex items-center rounded-lg bg-fd-primary px-6 py-3 text-sm font-medium text-white hover:opacity-90"
+        className="inline-flex items-center rounded-lg bg-fd-primary px-6 py-3 text-sm font-medium text-fd-primary-foreground hover:opacity-90"
       >
         Get Started
       </Link>
