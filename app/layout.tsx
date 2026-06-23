@@ -1,11 +1,25 @@
 import { RootProvider } from "fumadocs-ui/provider/next";
 import type { ReactNode } from "react";
+import type { Metadata } from "next";
 import "./global.css";
 
-export const metadata = {
+export const metadata: Metadata = {
+  metadataBase: new URL("https://docs.chonkie.ai"),
   title: "Chonkie Documentation",
   description:
     "The lightweight ingestion library for fast, efficient and robust RAG pipelines",
+  icons: {
+    icon: "/icon.svg",
+  },
+  openGraph: {
+    title: "Chonkie Documentation",
+    description:
+      "The lightweight ingestion library for fast, efficient and robust RAG pipelines",
+    siteName: "Chonkie",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
