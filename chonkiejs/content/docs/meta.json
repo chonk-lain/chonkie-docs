@@ -1,7 +1,0 @@
-{
-  "title": "ChonkieJS",
-  "description": "JavaScript chunking library",
-  "root": true,
-  "icon": "BookOpen",
-  "pages": ["index"]
-}
