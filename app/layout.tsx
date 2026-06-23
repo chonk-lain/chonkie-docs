@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "The lightweight ingestion library for fast, efficient and robust RAG pipelines",
   icons: {
-    icon: "/icon.svg",
+    icon: "https://www.chonkie.ai/chonkies/chonkie_icon.svg",
   },
   openGraph: {
     title: "Chonkie Documentation",
