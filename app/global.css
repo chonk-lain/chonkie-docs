@@ -2,12 +2,53 @@
 @import "fumadocs-ui/css/neutral.css";
 @import "fumadocs-ui/css/preset.css";
 
-:root {
-  --fd-background: 250 246 227;
-  --fd-primary: 167 137 108;
+@theme {
+  --color-fd-background: hsl(42, 33%, 97%);
+  --color-fd-foreground: hsl(30, 15%, 12%);
+  --color-fd-muted: hsl(40, 20%, 94%);
+  --color-fd-muted-foreground: hsl(30, 8%, 46%);
+  --color-fd-popover: hsl(42, 30%, 98%);
+  --color-fd-popover-foreground: hsl(30, 15%, 12%);
+  --color-fd-card: hsl(42, 25%, 95%);
+  --color-fd-card-foreground: hsl(30, 15%, 12%);
+  --color-fd-border: hsla(30, 20%, 75%, 0.4);
+  --color-fd-primary: hsl(135, 45%, 38%);
+  --color-fd-primary-foreground: hsl(0, 0%, 100%);
+  --color-fd-secondary: hsl(40, 22%, 93%);
+  --color-fd-secondary-foreground: hsl(30, 15%, 12%);
+  --color-fd-accent: hsla(35, 25%, 80%, 0.4);
+  --color-fd-accent-foreground: hsl(30, 15%, 12%);
+  --color-fd-ring: hsl(135, 45%, 38%);
+  --color-fd-overlay: hsla(30, 20%, 10%, 0.15);
 }
 
 .dark {
-  --fd-background: 26 26 26;
-  --fd-primary: 167 137 108;
+  --color-fd-background: hsl(0, 0%, 6%);
+  --color-fd-foreground: hsl(40, 10%, 92%);
+  --color-fd-muted: hsl(0, 0%, 11%);
+  --color-fd-muted-foreground: hsl(30, 5%, 58%);
+  --color-fd-popover: hsl(0, 0%, 9%);
+  --color-fd-popover-foreground: hsl(40, 10%, 90%);
+  --color-fd-card: hsl(0, 0%, 8%);
+  --color-fd-card-foreground: hsl(40, 10%, 95%);
+  --color-fd-border: hsla(0, 0%, 50%, 0.15);
+  --color-fd-primary: hsl(135, 55%, 52%);
+  --color-fd-primary-foreground: hsl(0, 0%, 5%);
+  --color-fd-secondary: hsl(0, 0%, 12%);
+  --color-fd-secondary-foreground: hsl(40, 10%, 92%);
+  --color-fd-accent: hsla(0, 0%, 45%, 0.2);
+  --color-fd-accent-foreground: hsl(40, 10%, 90%);
+  --color-fd-ring: hsl(135, 55%, 52%);
+  --color-fd-overlay: hsla(0, 0%, 0%, 0.4);
+}
+
+.dark #nd-sidebar {
+  --color-fd-muted: hsl(0, 0%, 9%);
+  --color-fd-secondary: hsl(0, 0%, 11%);
+  --color-fd-muted-foreground: hsl(30, 5%, 62%);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

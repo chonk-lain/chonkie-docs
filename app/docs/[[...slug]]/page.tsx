@@ -14,8 +14,12 @@ export default async function Page(props: {
   const params = await props.params;
 
   if (!params.slug || params.slug.length === 0) {
-    redirect("/docs/chonkie");
+    redirect("/docs/chonkie/common/welcome");
   }
+
+  const slug = params.slug.join("/");
+  if (slug === "chonkie/common") redirect("/docs/chonkie/common/welcome");
+  if (slug === "chonkie/oss") redirect("/docs/chonkie/oss/quick-start");
 
   const page = source.getPage(params.slug);
   if (!page) notFound();
@@ -34,7 +38,12 @@ export default async function Page(props: {
 }
 
 export function generateStaticParams() {
-  return [{ slug: [] }, ...source.generateParams()];
+  return [
+    { slug: [] },
+    { slug: ["chonkie", "common"] },
+    { slug: ["chonkie", "oss"] },
+    ...source.generateParams(),
+  ];
 }
 
 export async function generateMetadata(props: {

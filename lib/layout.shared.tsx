@@ -4,8 +4,14 @@ export const baseOptions: BaseLayoutProps = {
   nav: {
     title: (
       <>
-        <img src="https://www.chonkie.ai/chonkies/chonkie_icon.svg" alt="Chonkie" width={24} height={24} />
-        <span>Chonkie</span>
+        <img
+          src="https://www.chonkie.ai/chonkies/chonkie_icon.svg"
+          alt="Chonkie"
+          width={28}
+          height={28}
+          className="rounded-sm"
+        />
+        <span className="font-semibold">Chonkie</span>
       </>
     ),
   },

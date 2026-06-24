@@ -3,20 +3,7 @@
   "root": true,
   "icon": "Book",
   "pages": [
-    "index",
-    "concepts",
-    "open-source",
-    "getting-started",
-    "api-server",
-    "chefs",
-    "fetchers",
-    "chunkers",
-    "embeddings",
-    "refinery",
-    "handshakes",
-    "porters",
-    "utils",
-    "experimental",
-    "changelog"
+    "common",
+    "oss"
   ]
 }

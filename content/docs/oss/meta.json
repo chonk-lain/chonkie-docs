@@ -1,0 +1,20 @@
+{
+  "title": "Open Source",
+  "icon": "Book",
+  "pages": [
+    "quick-start",
+    "installation",
+    "pipelines",
+    "api",
+    "chefs",
+    "fetchers",
+    "chunkers",
+    "embeddings",
+    "refinery",
+    "handshakes",
+    "porters",
+    "utils",
+    "experimental",
+    "changelog"
+  ]
+}
