@@ -6,6 +6,7 @@ import { Step, Steps } from "fumadocs-ui/components/steps";
 import { Accordion, Accordions } from "fumadocs-ui/components/accordion";
 import { Card, Cards } from "fumadocs-ui/components/card";
 import { ParamField } from "./param-field";
+import { GithubReleases } from "./github-releases";
 
 export function getMDXComponents(components?: MDXComponents): MDXComponents {
   return {
@@ -20,6 +21,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     Card,
     Cards,
     ParamField,
+    GithubReleases,
     ...components,
   };
 }

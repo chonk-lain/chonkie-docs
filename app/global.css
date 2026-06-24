@@ -52,3 +52,107 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.release-body .release-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 0.75rem 0;
+}
+
+.release-body .release-h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-fd-foreground);
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.release-body .release-h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-fd-foreground);
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.release-body .release-list {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin: 0.5rem 0;
+}
+
+.release-body .release-list li {
+  margin-top: 0.25rem;
+}
+
+.release-body .release-code,
+.release-body pre.shiki {
+  border: 1px solid var(--color-fd-border);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  overflow-x: auto;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  margin: 0.5rem 0;
+}
+
+.release-body .release-code-wrapper {
+  position: relative;
+  margin: 0.5rem 0;
+}
+
+.release-body .release-copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.7rem;
+  border-radius: 0.25rem;
+  background: var(--color-fd-secondary);
+  color: var(--color-fd-muted-foreground);
+  border: 1px solid var(--color-fd-border);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.release-body .release-code-wrapper:hover .release-copy-btn {
+  opacity: 1;
+}
+
+.release-body .release-copy-btn:hover {
+  background: var(--color-fd-accent);
+  color: var(--color-fd-foreground);
+}
+
+.release-body .release-code {
+  background: var(--color-fd-muted);
+}
+
+.release-body .release-inline-code {
+  background: var(--color-fd-muted);
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  font-size: 0.8em;
+}
+
+.release-body .release-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.release-body .release-table th,
+.release-body .release-table td {
+  border: 1px solid var(--color-fd-border);
+  padding: 0.375rem 0.625rem;
+  text-align: left;
+}
+
+.release-body .release-table th {
+  background: var(--color-fd-muted);
+  font-weight: 600;
+  color: var(--color-fd-foreground);
+}
+
