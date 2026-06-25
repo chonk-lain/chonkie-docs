@@ -1,5 +1,6 @@
 {
   "title": "Handshakes",
+  "icon": "Plug",
   "pages": [
     "overview",
     "chroma-handshake",

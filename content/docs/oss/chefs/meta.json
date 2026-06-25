@@ -1,5 +1,6 @@
 {
   "title": "Chefs",
+  "icon": "ChefHat",
   "pages": [
     "overview",
     "tablechef",

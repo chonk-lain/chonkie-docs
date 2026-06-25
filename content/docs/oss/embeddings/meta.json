@@ -1,5 +1,6 @@
 {
   "title": "Embeddings",
+  "icon": "Brain",
   "pages": [
     "overview",
     "auto-embeddings",

@@ -36,7 +36,17 @@ async function sync() {
 
   for (const filePath of manifest.files) {
     const url = `${base}/${filePath}`;
-    const content = await fetchText(url);
+    let content = await fetchText(url);
+
+    // The chonkiejs changelog uses /data/releases.json which in standalone
+    // points to JS releases. In chonkie-docs, JS releases are at /data/releases-js.json.
+    if (filePath === 'content/docs/changelog.mdx') {
+      content = content.replace(
+        '<GithubReleases />',
+        '<GithubReleases src="/data/releases-js.json" />'
+      );
+    }
+
     const dest = path.join(outDir, filePath);
     await mkdir(path.dirname(dest), { recursive: true });
     await writeFile(dest, content);
