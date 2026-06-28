@@ -1,5 +1,6 @@
 import type { MDXComponents } from "mdx/types";
 import defaultMdxComponents from "fumadocs-ui/mdx";
+import { CodeBlock, Pre } from "fumadocs-ui/components/codeblock";
 import { Callout } from "fumadocs-ui/components/callout";
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 import { Step, Steps } from "fumadocs-ui/components/steps";
@@ -13,6 +14,11 @@ import { GithubReleases } from "./github-releases";
 export function getMDXComponents(components?: MDXComponents): MDXComponents {
   return {
     ...defaultMdxComponents,
+    pre: (props) => (
+      <CodeBlock className="chonkie-codeblock" {...props}>
+        <Pre>{props.children}</Pre>
+      </CodeBlock>
+    ),
     Callout,
     Tab,
     Tabs,

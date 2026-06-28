@@ -1,9 +1,3 @@
 {
-  "title": "Chonkie",
-  "root": true,
-  "icon": "Book",
-  "pages": [
-    "common",
-    "oss"
-  ]
+  "pages": ["python"]
 }

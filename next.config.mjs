@@ -10,6 +10,40 @@ const config = {
       { hostname: "raw.githubusercontent.com" },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/docs/overview",
+        destination: "/python/installation",
+        permanent: true,
+      },
+      {
+        source: "/docs/overview/:path*",
+        destination: "/python/installation",
+        permanent: true,
+      },
+      {
+        source: "/overview",
+        destination: "/python/installation",
+        permanent: true,
+      },
+      {
+        source: "/overview/:path*",
+        destination: "/python/installation",
+        permanent: true,
+      },
+      {
+        source: "/docs",
+        destination: "/python/installation",
+        permanent: true,
+      },
+      {
+        source: "/docs/:path*",
+        destination: "/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default withMDX(config);

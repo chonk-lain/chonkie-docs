@@ -11,7 +11,7 @@ export const baseOptions: BaseLayoutProps = {
           height={28}
           className="rounded-sm"
         />
-        <span className="font-semibold">Chonkie</span>
+        <span>Chonkie</span>
       </>
     ),
   },

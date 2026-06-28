@@ -6,11 +6,11 @@ import { createElement } from "react";
 
 export const source = loader(
   {
-    chonkie: docs.toFumadocsSource({ baseDir: "chonkie" }),
+    docs: docs.toFumadocsSource(),
     chonkiejs: chonkiejsDocs.toFumadocsSource({ baseDir: "chonkiejs" }),
   },
   {
-    baseUrl: "/docs",
+    baseUrl: "/",
     icon(icon) {
       if (icon && icon in icons)
         return createElement(icons[icon as keyof typeof icons]);

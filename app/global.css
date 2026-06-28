@@ -3,60 +3,191 @@
 @import "fumadocs-ui/css/preset.css";
 
 @theme {
-  --color-fd-background: hsl(42, 33%, 97%);
-  --color-fd-foreground: hsl(30, 15%, 12%);
-  --color-fd-muted: hsl(40, 20%, 94%);
-  --color-fd-muted-foreground: hsl(30, 8%, 46%);
-  --color-fd-popover: hsl(42, 30%, 98%);
-  --color-fd-popover-foreground: hsl(30, 15%, 12%);
-  --color-fd-card: hsl(42, 25%, 95%);
-  --color-fd-card-foreground: hsl(30, 15%, 12%);
-  --color-fd-border: hsla(30, 20%, 75%, 0.4);
-  --color-fd-primary: hsl(135, 45%, 38%);
-  --color-fd-primary-foreground: hsl(0, 0%, 100%);
-  --color-fd-secondary: hsl(40, 22%, 93%);
-  --color-fd-secondary-foreground: hsl(30, 15%, 12%);
-  --color-fd-accent: hsla(35, 25%, 80%, 0.4);
-  --color-fd-accent-foreground: hsl(30, 15%, 12%);
-  --color-fd-ring: hsl(135, 45%, 38%);
-  --color-fd-overlay: hsla(30, 20%, 10%, 0.15);
+  --radius: 0.25rem;
+  --color-fd-background: #faf6e3;
+  --color-fd-foreground: #1a1a1a;
+  --color-fd-muted: #ede5d3;
+  --color-fd-muted-foreground: #8e8e8e;
+  --color-fd-popover: #faf6e3;
+  --color-fd-popover-foreground: #1a1a1a;
+  --color-fd-card: #ede5d3;
+  --color-fd-card-foreground: #1a1a1a;
+  --color-fd-border: rgba(167, 137, 108, 0.35);
+  --color-fd-primary: #a7896c;
+  --color-fd-primary-foreground: #fafafa;
+  --color-fd-secondary: #ede5d3;
+  --color-fd-secondary-foreground: #1a1a1a;
+  --color-fd-accent: rgba(167, 137, 108, 0.15);
+  --color-fd-accent-foreground: #1a1a1a;
+  --color-fd-ring: #a7896c;
+  --color-fd-overlay: rgba(26, 26, 26, 0.15);
 }
 
 .dark {
-  --color-fd-background: hsl(0, 0%, 6%);
-  --color-fd-foreground: hsl(40, 10%, 92%);
-  --color-fd-muted: hsl(0, 0%, 11%);
-  --color-fd-muted-foreground: hsl(30, 5%, 58%);
-  --color-fd-popover: hsl(0, 0%, 9%);
-  --color-fd-popover-foreground: hsl(40, 10%, 90%);
-  --color-fd-card: hsl(0, 0%, 8%);
-  --color-fd-card-foreground: hsl(40, 10%, 95%);
-  --color-fd-border: hsla(0, 0%, 50%, 0.15);
-  --color-fd-primary: hsl(135, 55%, 52%);
-  --color-fd-primary-foreground: hsl(0, 0%, 5%);
-  --color-fd-secondary: hsl(0, 0%, 12%);
-  --color-fd-secondary-foreground: hsl(40, 10%, 92%);
-  --color-fd-accent: hsla(0, 0%, 45%, 0.2);
-  --color-fd-accent-foreground: hsl(40, 10%, 90%);
-  --color-fd-ring: hsl(135, 55%, 52%);
-  --color-fd-overlay: hsla(0, 0%, 0%, 0.4);
+  --color-fd-background: #1a1a1a;
+  --color-fd-foreground: #fafafa;
+  --color-fd-muted: #262626;
+  --color-fd-muted-foreground: #a3a3a3;
+  --color-fd-popover: #1a1a1a;
+  --color-fd-popover-foreground: #fafafa;
+  --color-fd-card: #262626;
+  --color-fd-card-foreground: #fafafa;
+  --color-fd-border: rgba(167, 137, 108, 0.2);
+  --color-fd-primary: #c4a088;
+  --color-fd-primary-foreground: #1a1a1a;
+  --color-fd-secondary: #262626;
+  --color-fd-secondary-foreground: #fafafa;
+  --color-fd-accent: rgba(196, 160, 136, 0.15);
+  --color-fd-accent-foreground: #fafafa;
+  --color-fd-ring: #c4a088;
+  --color-fd-overlay: rgba(0, 0, 0, 0.5);
 }
 
 .dark #nd-sidebar {
-  --color-fd-muted: hsl(0, 0%, 9%);
-  --color-fd-secondary: hsl(0, 0%, 11%);
-  --color-fd-muted-foreground: hsl(30, 5%, 62%);
+  --color-fd-muted: #222222;
+  --color-fd-secondary: #262626;
+  --color-fd-muted-foreground: #a3a3a3;
 }
 
 body {
+  font-family: var(--font-lora), "Lora", Georgia, serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-fd-primary);
+  color: var(--color-fd-primary-foreground);
+}
+
+/* Docs layout — cap outer gutters so wide screens don't get huge side margins */
+#nd-docs-layout {
+  grid-template-columns:
+    minmax(0, 1rem)
+    var(--fd-sidebar-col)
+    minmax(0, 1fr)
+    var(--fd-toc-width)
+    minmax(0, 1rem) !important;
+}
+
+@media (min-width: 768px) {
+  #nd-docs-layout {
+    grid-template-columns:
+      minmax(0, 1.5rem)
+      var(--fd-sidebar-col)
+      minmax(0, 1fr)
+      var(--fd-toc-width)
+      minmax(0, 1.5rem) !important;
+  }
+}
+
+#nd-page {
+  max-width: none !important;
+  width: 100%;
+}
+
+@media (min-width: 1280px) {
+  #nd-page {
+    padding-inline: 1.5rem !important;
+  }
+}
+
+/* Code blocks — match page background in both themes */
+figure.shiki,
+figure.chonkie-codeblock {
+  border-radius: 0.25rem;
+  background-color: var(--color-fd-background) !important;
+  --shiki-light-bg: var(--color-fd-background);
+  --shiki-dark-bg: var(--color-fd-background);
+  box-shadow: none;
+}
+
+figure.shiki.bg-fd-card,
+figure.shiki.bg-fd-secondary {
+  background-color: var(--color-fd-background) !important;
+}
+
+figure.shiki pre,
+figure.shiki code,
+figure.shiki .line,
+figure.shiki .shiki {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+/* Single bordered container — scroll viewport stays flush inside the figure */
+figure.shiki > [role="region"] {
+  border: none;
+  box-shadow: none;
+}
+
+/* Tabbed install snippets — outer shell matches page too */
+.border.bg-fd-secondary.my-4:has(figure.shiki) {
+  background-color: var(--color-fd-background) !important;
+}
+
+.dark figure.shiki {
+  border-color: rgba(196, 160, 136, 0.22) !important;
+}
+
+.dark .shiki:not(.not-fumadocs-codeblock *) code span,
+.dark code.shiki:not(.not-fumadocs-code *) span {
+  color: var(--shiki-dark) !important;
+  background-color: transparent !important;
+}
+
+/* Shiki sometimes inlines theme bg on spans — strip so page bg shows through */
+.shiki span[style*="background"] {
+  background-color: transparent !important;
+}
+
+:not(pre) > code {
+  background: var(--color-fd-muted);
+  color: var(--color-fd-foreground);
+  border: 1px solid var(--color-fd-border);
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+}
+
+/* Release / legacy code blocks (exclude Fumadocs figure blocks above) */
+.release-body pre.shiki,
+.release-body .release-code {
+  border-radius: 0.25rem;
+  border: 1px solid var(--color-fd-border);
+}
+
+.dark .release-body pre.shiki {
+  background: var(--color-fd-background);
+}
+
+/* Page footer prev/next */
+#nd-page-footer {
+  border-top: 1px dashed var(--color-fd-border);
+}
+
+#nd-page-footer a {
+  transition: background-color 0.15s ease;
+}
+
+#nd-page-footer a:hover {
+  background-color: var(--color-fd-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 .release-body .release-img {
   max-width: 100%;
   height: auto;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   margin: 0.75rem 0;
 }
 
@@ -88,8 +219,6 @@ body {
 
 .release-body .release-code,
 .release-body pre.shiki {
-  border: 1px solid var(--color-fd-border);
-  border-radius: 0.5rem;
   padding: 0.75rem 1rem;
   overflow-x: auto;
   font-size: 0.75rem;
@@ -155,4 +284,3 @@ body {
   font-weight: 600;
   color: var(--color-fd-foreground);
 }
-

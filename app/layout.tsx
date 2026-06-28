@@ -1,10 +1,13 @@
 import { RootProvider } from "fumadocs-ui/provider/next";
-import { Inter } from "next/font/google";
+import { Lora } from "next/font/google";
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
 import "./global.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const lora = Lora({
+  subsets: ["latin"],
+  variable: "--font-lora",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://docs.chonkie.ai"),
@@ -28,7 +31,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={`${lora.className} ${lora.variable}`}>
         <RootProvider search={{ options: { type: "static" } }}>
           {children}
         </RootProvider>

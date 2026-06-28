@@ -1,9 +1,0 @@
-{
-  "title": "Welcome",
-  "icon": "Hippo",
-  "pages": [
-    "welcome",
-    "concepts",
-    "open-source"
-  ]
-}
