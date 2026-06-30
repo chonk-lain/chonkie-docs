@@ -2,6 +2,7 @@ import { RootProvider } from "fumadocs-ui/provider/next";
 import { Lora } from "next/font/google";
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
+import { getSearchTags } from "@/lib/doc-collections";
 import "./global.css";
 
 const lora = Lora({
@@ -31,8 +32,19 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${lora.className} ${lora.variable}`}>
-        <RootProvider search={{ options: { type: "static" } }}>
+      <body
+        className={`${lora.className} ${lora.variable}`}
+        suppressHydrationWarning
+      >
+        <RootProvider
+          search={{
+            options: {
+              type: "static",
+              tags: getSearchTags(),
+              allowClear: true,
+            },
+          }}
+        >
           {children}
         </RootProvider>
       </body>
