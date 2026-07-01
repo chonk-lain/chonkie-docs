@@ -1,1 +1,1 @@
-export const PYTHON_INSTALLATION = "/python/installation";
+export const CHONKIE_QUICK_START = "/chonkie/quick-start";

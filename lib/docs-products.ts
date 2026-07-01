@@ -1,4 +1,4 @@
-export type DocsProductId = "python" | "javascript";
+export type DocsProductId = "chonkie" | "chonkiejs";
 
 export interface DocsProduct {
   id: DocsProductId;
@@ -11,20 +11,20 @@ export interface DocsProduct {
 
 export const docsProducts: DocsProduct[] = [
   {
-    id: "python",
-    label: "Python",
+    id: "chonkie",
+    label: "chonkie",
     description: "chonkie on PyPI",
-    basePath: "/python",
-    defaultPage: "/python/installation",
-    badge: "PY",
+    basePath: "/chonkie",
+    defaultPage: "/chonkie/quick-start",
+    badge: null,
   },
   {
-    id: "javascript",
-    label: "JavaScript",
+    id: "chonkiejs",
+    label: "chonkiejs",
     description: "@chonkiejs/core on npm",
     basePath: "/chonkiejs",
     defaultPage: "/chonkiejs/getting-started/quick-start",
-    badge: "JS",
+    badge: null,
   },
 ];
 

@@ -63,7 +63,6 @@ async function buildPageSearchIndex(page: DocsPage) {
     title: page.data.title ?? page.url,
     description: page.data.description,
     url: page.url,
-    tag: product?.id,
     breadcrumbs: breadcrumbs.length > 0 ? breadcrumbs : undefined,
     structuredData,
   };

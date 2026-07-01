@@ -13,28 +13,38 @@ const config = {
   async redirects() {
     return [
       {
+        source: "/python",
+        destination: "/chonkie/quick-start",
+        permanent: true,
+      },
+      {
+        source: "/python/:path*",
+        destination: "/chonkie/:path*",
+        permanent: true,
+      },
+      {
         source: "/docs/overview",
-        destination: "/python/installation",
+        destination: "/chonkie/quick-start",
         permanent: true,
       },
       {
         source: "/docs/overview/:path*",
-        destination: "/python/installation",
+        destination: "/chonkie/quick-start",
         permanent: true,
       },
       {
         source: "/overview",
-        destination: "/python/installation",
+        destination: "/chonkie/quick-start",
         permanent: true,
       },
       {
         source: "/overview/:path*",
-        destination: "/python/installation",
+        destination: "/chonkie/quick-start",
         permanent: true,
       },
       {
         source: "/docs",
-        destination: "/python/installation",
+        destination: "/chonkie/quick-start",
         permanent: true,
       },
       {

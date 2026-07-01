@@ -2,7 +2,7 @@ import { RootProvider } from "fumadocs-ui/provider/next";
 import { Lora } from "next/font/google";
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
-import { getSearchTags } from "@/lib/doc-collections";
+import { ChonkieSearchDialog } from "@/components/search-dialog";
 import "./global.css";
 
 const lora = Lora({
@@ -38,11 +38,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       >
         <RootProvider
           search={{
-            options: {
-              type: "static",
-              tags: getSearchTags(),
-              allowClear: true,
-            },
+            SearchDialog: ChonkieSearchDialog,
+            options: { type: "static" },
           }}
         >
           {children}

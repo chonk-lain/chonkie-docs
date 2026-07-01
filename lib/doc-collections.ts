@@ -29,12 +29,12 @@ export interface DocCollectionEntry {
 
 const collectionRegistry: DocCollectionEntry[] = [
   {
-    productId: "python",
+    productId: "chonkie",
     loaderKey: "docs",
     collection: docs,
   },
   {
-    productId: "javascript",
+    productId: "chonkiejs",
     loaderKey: "chonkiejs",
     collection: chonkiejsDocs,
     baseDir: "chonkiejs",
@@ -53,17 +53,6 @@ export function getProductForPageUrl(url: string): DocsProduct | undefined {
     (product) =>
       url === product.basePath || url.startsWith(`${product.basePath}/`),
   );
-}
-
-export function getProductIdForPageUrl(url: string): DocsProductId | undefined {
-  return getProductForPageUrl(url)?.id;
-}
-
-export function getSearchTags() {
-  return docsProducts.map((product) => ({
-    name: product.label,
-    value: product.id,
-  }));
 }
 
 export function getProductByLoaderKey(

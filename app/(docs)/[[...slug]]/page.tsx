@@ -7,18 +7,18 @@ import {
 } from "fumadocs-ui/page";
 import { redirect } from "next/navigation";
 import { getMDXComponents } from "@/components/mdx";
-import { PYTHON_INSTALLATION } from "@/lib/constants";
+import { CHONKIE_QUICK_START } from "@/lib/constants";
 
-function shouldRedirectToInstallation(slug: string): boolean {
+function shouldRedirectToDefault(slug: string): boolean {
   if (slug === "overview" || slug.startsWith("overview/")) return true;
   if (slug.startsWith("chonkie/common")) return true;
   return false;
 }
 
-function resolveLegacyPythonPath(slug: string): string | null {
-  if (slug === "chonkie/oss") return PYTHON_INSTALLATION;
+function resolveLegacyChonkiePath(slug: string): string | null {
+  if (slug === "chonkie/oss") return CHONKIE_QUICK_START;
   if (slug.startsWith("chonkie/oss/")) {
-    return `/python/${slug.slice("chonkie/oss/".length)}`;
+    return `/chonkie/${slug.slice("chonkie/oss/".length)}`;
   }
   return null;
 }
@@ -29,22 +29,22 @@ export default async function Page(props: {
   const params = await props.params;
 
   if (!params.slug || params.slug.length === 0) {
-    redirect(PYTHON_INSTALLATION);
+    redirect(CHONKIE_QUICK_START);
   }
 
   const slug = params.slug.join("/");
 
-  if (shouldRedirectToInstallation(slug)) {
-    redirect(PYTHON_INSTALLATION);
+  if (shouldRedirectToDefault(slug)) {
+    redirect(CHONKIE_QUICK_START);
   }
 
-  const legacyPython = resolveLegacyPythonPath(slug);
-  if (legacyPython) redirect(legacyPython);
+  const legacyChonkie = resolveLegacyChonkiePath(slug);
+  if (legacyChonkie) redirect(legacyChonkie);
 
-  if (slug === "python") redirect(PYTHON_INSTALLATION);
+  if (slug === "python" || slug === "chonkie") redirect(CHONKIE_QUICK_START);
 
   const page = source.getPage(params.slug);
-  if (!page) redirect(PYTHON_INSTALLATION);
+  if (!page) redirect(CHONKIE_QUICK_START);
 
   const MDX = page.data.body;
 
@@ -63,7 +63,7 @@ export default async function Page(props: {
 }
 
 export function generateStaticParams() {
-  return [{ slug: [] }, { slug: ["python"] }, ...source.generateParams()];
+  return [{ slug: [] }, { slug: ["chonkie"] }, ...source.generateParams()];
 }
 
 export async function generateMetadata(props: {
@@ -75,12 +75,12 @@ export async function generateMetadata(props: {
   }
 
   const slug = params.slug.join("/");
-  if (shouldRedirectToInstallation(slug)) {
-    redirect(PYTHON_INSTALLATION);
+  if (shouldRedirectToDefault(slug)) {
+    redirect(CHONKIE_QUICK_START);
   }
 
   const page = source.getPage(params.slug);
-  if (!page) redirect(PYTHON_INSTALLATION);
+  if (!page) redirect(CHONKIE_QUICK_START);
 
   return {
     title: page.data.title,
